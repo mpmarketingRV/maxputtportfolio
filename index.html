@@ -32,32 +32,48 @@
     }
 
     main {
-      display: flex;
-      flex-wrap: wrap;
       padding: 2rem;
-      gap: 2rem;
       max-width: 1200px;
       margin: auto;
     }
 
-    .half {
-      flex: 1 1 45%;
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
+    section {
+      margin-bottom: 3rem;
       background: rgba(255, 255, 255, 0.05);
       border-radius: 16px;
-      padding: 1.5rem;
+      padding: 2rem;
       box-shadow: 0 0 15px rgba(0,0,0,0.3);
       backdrop-filter: blur(6px);
     }
 
-    h2 {
-      text-align: center;
-      font-size: 1.6rem;
+    section h2 {
       font-family: 'Poppins', sans-serif;
+      font-size: 1.8rem;
+      text-align: center;
+      margin-bottom: 1rem;
       color: #ff9f43;
-      margin-top: 0;
+    }
+
+    .link-list {
+      text-align: center;
+    }
+
+    .link-list a {
+      display: block;
+      margin: 0.5rem auto;
+      padding: 0.75rem 1.5rem;
+      background: linear-gradient(90deg, #ff512f, #dd2476);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 8px;
+      max-width: 400px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .link-list a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
     }
 
     iframe {
@@ -68,25 +84,39 @@
       box-shadow: 0 0 12px rgba(0,0,0,0.4);
     }
 
-    .link-section {
+    /* Carousel Styles */
+    .carousel-container {
       text-align: center;
+      margin-top: 1.5rem;
     }
 
-    .link-section a {
-      display: inline-block;
-      margin: 0.5rem;
-      padding: 0.75rem 1.5rem;
-      background: linear-gradient(90deg, #ff512f, #dd2476);
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
+    .carousel {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .carousel img {
+      width: 400px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    .carousel button {
+      background-color: #ff512f;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      font-size: 1.5rem;
+      cursor: pointer;
       border-radius: 8px;
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: background 0.2s;
     }
 
-    .link-section a:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    .carousel button:hover {
+      background-color: #dd2476;
     }
 
     footer {
@@ -104,10 +134,7 @@
     }
 
     @media (max-width: 900px) {
-      main {
-        flex-direction: column;
-      }
-      .half {
+      .carousel img {
         width: 100%;
       }
     }
@@ -120,26 +147,85 @@
   </header>
 
   <main>
-    <!-- Left Column -->
-    <div class="half">
-      <h2>Featured Work</h2>
-      <div class="link-section">
-        <a href="project1.pdf" target="_blank">📄 Campaign Strategy PDF</a>
-        <a href="project2.pdf" target="_blank">📄 Social Media Report</a>
-        <a href="project3.pdf" target="_blank">📄 Brand Pitch Deck</a>
+    <!-- Section 1: Writing/Web Design -->
+    <section>
+      <h2>Writing / Web Design</h2>
+      <div class="link-list">
+        <a href="https://ackleyhartnett.com/" target="_blank">Ackley Hartnett Website</a>
+        <a href="https://www.rvii.com/industries/engineering-services/archiving-and-reverse-engineering/" target="_blank">RVII Archiving & Reverse Engineering</a>
+        <a href="https://www.gen-techno.com/integra.php" target="_blank">Gen-Tech Integra</a>
       </div>
-    </div>
+    </section>
 
-    <!-- Right Column -->
-    <div class="half">
-      <h2>Case Study Preview</h2>
-      <iframe src="sample.pdf"></iframe>
-    </div>
+    <!-- Section 2: Physical Marketing/Literature -->
+    <section>
+      <h2>Physical Marketing / Literature</h2>
+      <div class="link-list">
+        <a href="https://drive.google.com/file/d/1fT_bbgJs405s7ho6uzg__0ZgnZ5qu4lk/view?usp=sharing" target="_blank">Product Brochure 1</a>
+        <a href="https://drive.google.com/file/d/1gjIWaEN1QxoT_Nc7sZk8pJz2BfG7HIIO/view?usp=sharing" target="_blank">Product Brochure 2</a>
+        <a href="https://drive.google.com/file/d/1jS72j-b_4nKpRN89oVvYKzs7kWhmK_Or/view?usp=sharing" target="_blank">Product Brochure 3</a>
+      </div>
+    </section>
+
+    <!-- Section 3: Video/3D Design -->
+    <section>
+      <h2>Video / 3D Design</h2>
+      <div class="link-list">
+        <a href="https://rvindustriesinc-my.sharepoint.com/:v:/g/personal/mputt_rvii_com/EV7fF6Z8tGxEgHK4Ef3q54oBRDSjXNMXgfESMzSes_G3ag?e=xUeWLR" target="_blank">Promotional Video 1</a>
+        <a href="https://rvindustriesinc-my.sharepoint.com/:v:/g/personal/mputt_rvii_com/ETWlxHu_fzFPhqsEbfwfbX8BqO1LV4Xf3MT2CZRqZ0lVaQ?e=9ssbcq" target="_blank">Promotional Video 2</a>
+        <a href="https://rvindustriesinc-my.sharepoint.com/:v:/g/personal/mputt_rvii_com/ERb9u3U9pI9OjEnu78qXL3IB9pDCD63TeZOGriXWvVxWfA?e=HSs8La" target="_blank">Promotional Video 3</a>
+      </div>
+
+      <h3 style="text-align:center; margin-top:2rem; color:#ff9f43;">3D Viewer</h3>
+      <div class="sketchfab-embed-wrapper">
+        <iframe title="LDI" frameborder="0" allowfullscreen 
+          mozallowfullscreen="true" webkitallowfullscreen="true" 
+          allow="autoplay; fullscreen; xr-spatial-tracking"
+          src="https://sketchfab.com/models/79ed247063ea425cae5d0f159d29eaea/embed">
+        </iframe>
+      </div>
+
+      <div style="text-align:center; margin-top:1rem;">
+        <a rel="ar" href="LDI.usdz" class="link">📱 View in AR (iPhone Only)</a>
+      </div>
+    </section>
+
+    <!-- Section 4: Trade Shows/Events -->
+    <section>
+      <h2>Trade Shows / Events</h2>
+      <div class="carousel-container">
+        <div class="carousel">
+          <button onclick="prevSlide()">❮</button>
+          <img id="carouselImage" src="event1.jpg" alt="Event Image">
+          <button onclick="nextSlide()">❯</button>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer>
     <p>© 2025 Max Putt | <a href="https://yourwebsite.com" target="_blank">yourwebsite.com</a></p>
   </footer>
+
+  <script>
+    const images = ["event1.jpg", "event2.jpg", "event3.jpg"];
+    let currentIndex = 0;
+    const imgElement = document.getElementById("carouselImage");
+
+    function showImage(index) {
+      imgElement.src = images[index];
+    }
+
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage(currentIndex);
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
+    }
+  </script>
 
 </body>
 </html>
