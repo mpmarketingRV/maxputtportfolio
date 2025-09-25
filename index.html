@@ -67,7 +67,7 @@
       text-decoration: none;
       font-weight: 600;
       border-radius: 8px;
-      max-width: 400px;
+      max-width: 500px;
       transition: transform 0.2s, box-shadow 0.2s;
     }
 
@@ -119,6 +119,14 @@
       background-color: #dd2476;
     }
 
+    .caption {
+      margin-top: 0.8rem;
+      font-size: 1rem;
+      color: #ff9f43;
+      font-weight: 600;
+      text-align: center;
+    }
+
     footer {
       background: #0d0d1a;
       text-align: center;
@@ -151,9 +159,9 @@
     <section>
       <h2>Writing / Web Design</h2>
       <div class="link-list">
-        <a href="https://ackleyhartnett.com/" target="_blank">Ackley Hartnett Website</a>
-        <a href="https://www.rvii.com/industries/engineering-services/archiving-and-reverse-engineering/" target="_blank">RVII Archiving & Reverse Engineering</a>
-        <a href="https://www.gen-techno.com/integra.php" target="_blank">Gen-Tech Integra</a>
+        <a href="https://ackleyhartnett.com/" target="_blank">WordPress Website Design</a>
+        <a href="https://www.rvii.com/industries/engineering-services/archiving-and-reverse-engineering/" target="_blank">Web Writing and Structure</a>
+        <a href="https://www.gen-techno.com/integra.php" target="_blank">Product Web Writing and Page Layout</a>
       </div>
     </section>
 
@@ -161,9 +169,9 @@
     <section>
       <h2>Physical Marketing / Literature</h2>
       <div class="link-list">
-        <a href="https://drive.google.com/file/d/1fT_bbgJs405s7ho6uzg__0ZgnZ5qu4lk/view?usp=sharing" target="_blank">Product Brochure 1</a>
-        <a href="https://drive.google.com/file/d/1gjIWaEN1QxoT_Nc7sZk8pJz2BfG7HIIO/view?usp=sharing" target="_blank">Product Brochure 2</a>
-        <a href="https://drive.google.com/file/d/1jS72j-b_4nKpRN89oVvYKzs7kWhmK_Or/view?usp=sharing" target="_blank">Product Brochure 3</a>
+        <a href="https://drive.google.com/file/d/1fT_bbgJs405s7ho6uzg__0ZgnZ5qu4lk/view?usp=sharing" target="_blank">Product Brochure</a>
+        <a href="https://drive.google.com/file/d/1gjIWaEN1QxoT_Nc7sZk8pJz2BfG7HIIO/view?usp=sharing" target="_blank">Launch Flyer</a>
+        <a href="https://drive.google.com/file/d/1jS72j-b_4nKpRN89oVvYKzs7kWhmK_Or/view?usp=sharing" target="_blank">Company Overview Literature</a>
       </div>
     </section>
 
@@ -171,9 +179,9 @@
     <section>
       <h2>Video / 3D Design</h2>
       <div class="link-list">
-        <a href="https://rvindustriesinc-my.sharepoint.com/:v:/g/personal/mputt_rvii_com/EV7fF6Z8tGxEgHK4Ef3q54oBRDSjXNMXgfESMzSes_G3ag?e=xUeWLR" target="_blank">Promotional Video 1</a>
-        <a href="https://rvindustriesinc-my.sharepoint.com/:v:/g/personal/mputt_rvii_com/ETWlxHu_fzFPhqsEbfwfbX8BqO1LV4Xf3MT2CZRqZ0lVaQ?e=9ssbcq" target="_blank">Promotional Video 2</a>
-        <a href="https://rvindustriesinc-my.sharepoint.com/:v:/g/personal/mputt_rvii_com/ERb9u3U9pI9OjEnu78qXL3IB9pDCD63TeZOGriXWvVxWfA?e=HSs8La" target="_blank">Promotional Video 3</a>
+        <a href="https://rvindustriesinc-my.sharepoint.com/:v:/g/personal/mputt_rvii_com/EV7fF6Z8tGxEgHK4Ef3q54oBRDSjXNMXgfESMzSes_G3ag?e=xUeWLR" target="_blank">Product Video</a>
+        <a href="https://rvindustriesinc-my.sharepoint.com/:v:/g/personal/mputt_rvii_com/ETWlxHu_fzFPhqsEbfwfbX8BqO1LV4Xf3MT2CZRqZ0lVaQ?e=9ssbcq" target="_blank">Company Overview Video for Social Media</a>
+        <a href="https://rvindustriesinc-my.sharepoint.com/:v:/g/personal/mputt_rvii_com/ERb9u3U9pI9OjEnu78qXL3IB9pDCD63TeZOGriXWvVxWfA?e=HSs8La" target="_blank">Promotional Video w/Drone</a>
       </div>
 
       <h3 style="text-align:center; margin-top:2rem; color:#ff9f43;">3D Viewer</h3>
@@ -196,7 +204,10 @@
       <div class="carousel-container">
         <div class="carousel">
           <button onclick="prevSlide()">❮</button>
-          <img id="carouselImage" src="event1.jpg" alt="Event Image">
+          <div>
+            <img id="carouselImage" src="event1.png" alt="Event Image">
+            <div id="caption" class="caption">CPHI Milan</div>
+          </div>
           <button onclick="nextSlide()">❯</button>
         </div>
       </div>
@@ -208,12 +219,20 @@
   </footer>
 
   <script>
-    const images = ["event1.jpg", "event2.jpg", "event3.jpg"];
+    const images = [
+      { src: "event1.png", caption: "CPHI Milan" },
+      { src: "event2.png", caption: "Brand Launch Event" },
+      { src: "event3.png", caption: "Trade Show" },
+      { src: "event4.png", caption: "3D Booth Rendering" }
+    ];
+
     let currentIndex = 0;
     const imgElement = document.getElementById("carouselImage");
+    const captionElement = document.getElementById("caption");
 
     function showImage(index) {
-      imgElement.src = images[index];
+      imgElement.src = images[index].src;
+      captionElement.textContent = images[index].caption;
     }
 
     function prevSlide() {
